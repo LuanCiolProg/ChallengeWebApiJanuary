@@ -7,6 +7,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using ChallengeWebApiJanuary.Data;
 using Microsoft.FeatureManagement;
+using ChallengeWebApiJanuary.Services;
 
 namespace ChallengeWebApiJanuary
 {
@@ -24,6 +25,7 @@ namespace ChallengeWebApiJanuary
         {
             services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("Database"));
             services.AddScoped<DataContext, DataContext>();
+            services.AddScoped<IContratoService, ContratoService>();
             services.AddControllers();
             services.AddMemoryCache();
             services.AddSwaggerGen(c =>
@@ -48,7 +50,7 @@ namespace ChallengeWebApiJanuary
             c.RoutePrefix = string.Empty;
         });
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 

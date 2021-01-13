@@ -38,3 +38,4 @@ C:\Users\LuanPedroMirandaCiol\ChallengeWebApiJanuary\obj\Debug\netcoreapp3.1\sta
 C:\Users\LuanPedroMirandaCiol\ChallengeWebApiJanuary\obj\Debug\netcoreapp3.1\ChallengeWebApiJanuary.dll
 C:\Users\LuanPedroMirandaCiol\ChallengeWebApiJanuary\obj\Debug\netcoreapp3.1\ChallengeWebApiJanuary.pdb
 C:\Users\LuanPedroMirandaCiol\ChallengeWebApiJanuary\obj\Debug\netcoreapp3.1\ChallengeWebApiJanuary.genruntimeconfig.cache
+C:\Users\LuanPedroMirandaCiol\ChallengeWebApiJanuary\bin\Debug\netcoreapp3.1\Microsoft.FeatureManagement.dll

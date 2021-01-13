@@ -7,9 +7,9 @@ using ChallengeWebApiJanuary.Models;
 using System;
 using Microsoft.FeatureManagement;
 using Microsoft.Extensions.Caching.Memory;
-using ChallengeWebApiJanuary;
+using ChallengeWebApiJanuary.Services;
 
-namespace testeef.Controllers
+namespace ChallengeWebApiJanuary.Controllers
 {
     [ApiController]
     [Route("v1/contrato")]
@@ -18,23 +18,23 @@ namespace testeef.Controllers
     {
        private IMemoryCache cache;
        private DataContext _context;
-
+        private IContratoService contratoService;
        private IFeatureManager featureManager;
 
-       private readonly string contratoKey = "contrato";
-       public ContratoController(DataContext context, IMemoryCache cache, IFeatureManager featureManager)
+      
+       public ContratoController(DataContext context, IMemoryCache cache, IFeatureManager featureManager, IContratoService contratoService)
        {
            _context=context;
            this.cache = cache;
            this.featureManager = featureManager;
+           this.contratoService = contratoService;
        }
        
        [HttpGet]
        [Route("")]
        public async Task<ActionResult<List<Contrato>>> Get([FromServices] DataContext context)
        {
-           var contrato = await context.Contratos.ToListAsync();
-           return contrato;
+           return await contratoService.GetContratos();
        } 
 
         [HttpPost]
@@ -60,11 +60,8 @@ namespace testeef.Controllers
 
             public async Task<Contrato> Deletar ([FromServices] DataContext context, int id) 
             {
-                Contrato contrato = await context.Contratos.FindAsync(id);
-                context.Contratos.Remove(contrato);
-                await context.SaveChangesAsync();
 
-                return contrato;
+                return await contratoService.DeleteContrato(id);
             }
 
             [HttpPut]
@@ -72,14 +69,8 @@ namespace testeef.Controllers
 
             public async Task<Contrato> Editar ([FromServices] DataContext context, [FromBody]Contrato model, int id) 
             {
-                Console.WriteLine(id);
-                Contrato contrato = await context.Contratos.FindAsync(id);
-                contrato.DataContratacao = model.DataContratacao;
-                contrato.QuantidadeDeParcelas = model.QuantidadeDeParcelas;
-                contrato.ValorFinanciado = model.ValorFinanciado;
-                await context.SaveChangesAsync();
-
-                return contrato;
+                
+                return await contratoService.EditarContrato(id, model);
             }
 
             [HttpGet]
@@ -87,17 +78,8 @@ namespace testeef.Controllers
             
             public async Task<ActionResult<Contrato>> Get([FromServices] DataContext context, int id)
             {
-                Contrato contrato;
-                if (await featureManager.IsEnabledAsync(nameof(FeatureManagementEnum.MemoryCache)))
-                {
-                    if (cache.TryGetValue<Contrato>(contratoKey + id, out contrato))
-                    return contrato;
-                }
-                contrato = await context.Contratos.FirstOrDefaultAsync(w => id == w.Id);
-                var DataAtual = DateTime.Now;
-                var DataExpiracao = new DateTimeOffset(DataAtual.Year,DataAtual.Month,DataAtual.Day + 1,0,0,0,TimeSpan.FromHours(-3));
-                cache.Set<Contrato>(contratoKey + id, contrato, DataExpiracao);
-                return contrato;
+                
+                return await contratoService.GetListar(id);
             }
         }
 }
