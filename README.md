@@ -11,7 +11,7 @@
  
  [ ] SOLID, clean code..
  
- [ ] Unit Testing;
+ [x] Unit Testing;
  
  [x] Contract ID field must not be available to be registered in the post method;
  
