@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HCB8ZLOs+wR30Q8x4Ip6cwRUGsVvIInWV5Ii+rohmlLzH8eNsscADGbIKeCgSGMxV4YUMCV7uUJH0nfmTw0UCQ==",
+  "dgSpecHash": "sFJFpqVHhQzSad6WuDuHaU628BbeXVfLbU3ZYxkWMcS1yVyBJLaa7Sjs4T2KvIQG89ef7Ej/sBjghhMKG+Jh5w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\LuanPedroMirandaCiol\\ChallengeWebApiJanuary\\ChallengeWebApiJanuary.csproj",
+  "projectFilePath": "C:\\Users\\LuanPedroMirandaCiol\\ChallengeWebSln\\ChallengeWebApiJanuary\\ChallengeWebApiJanuary.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LuanPedroMirandaCiol\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.1\\microsoft.entityframeworkcore.5.0.1.nupkg.sha512",
     "C:\\Users\\LuanPedroMirandaCiol\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.1\\microsoft.entityframeworkcore.abstractions.5.0.1.nupkg.sha512",

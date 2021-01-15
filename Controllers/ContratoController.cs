@@ -76,10 +76,10 @@ namespace ChallengeWebApiJanuary.Controllers
             [HttpGet]
             [Route("Listar/{id}")]
             
-            public async Task<ActionResult<Contrato>> Get([FromServices] DataContext context, int id)
+            public async Task<ActionResult<Contrato>> Get([FromServices] DataContext context, int id,[FromServices] IFeatureManager featureManager, [FromServices] IMemoryCache cache)
             {
                 
-                return await contratoService.GetListar(id);
+                return await contratoService.GetListar(id, featureManager, cache);
             }
         }
 }

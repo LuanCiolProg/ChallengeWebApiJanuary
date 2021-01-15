@@ -3,15 +3,17 @@ using System.Threading.Tasks;
 using ChallengeWebApiJanuary.Data;
 using ChallengeWebApiJanuary.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
+using Microsoft.FeatureManagement;
 
 namespace ChallengeWebApiJanuary.Services
 {
     public interface IContratoService
     {
-        Task<ActionResult<List<Contrato>>> GetContratos();
+        Task<List<Contrato>> GetContratos();
         Task<Contrato> DeleteContrato ( int id);
         Task<Contrato> EditarContrato (int id, Contrato model);
-        Task<ActionResult<Contrato>> GetListar(int id);
+        Task<Contrato> GetListar(int id,[FromServices] IFeatureManager featureManager, [FromServices] IMemoryCache cache);
 
     }
 }

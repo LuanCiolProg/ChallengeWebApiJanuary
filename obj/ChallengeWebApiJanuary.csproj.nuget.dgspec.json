@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\LuanPedroMirandaCiol\\ChallengeWebApiJanuary\\ChallengeWebApiJanuary.csproj": {}
+    "C:\\Users\\LuanPedroMirandaCiol\\ChallengeWebSln\\ChallengeWebApiJanuary\\ChallengeWebApiJanuary.csproj": {}
   },
   "projects": {
-    "C:\\Users\\LuanPedroMirandaCiol\\ChallengeWebApiJanuary\\ChallengeWebApiJanuary.csproj": {
+    "C:\\Users\\LuanPedroMirandaCiol\\ChallengeWebSln\\ChallengeWebApiJanuary\\ChallengeWebApiJanuary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LuanPedroMirandaCiol\\ChallengeWebApiJanuary\\ChallengeWebApiJanuary.csproj",
+        "projectUniqueName": "C:\\Users\\LuanPedroMirandaCiol\\ChallengeWebSln\\ChallengeWebApiJanuary\\ChallengeWebApiJanuary.csproj",
         "projectName": "ChallengeWebApiJanuary",
-        "projectPath": "C:\\Users\\LuanPedroMirandaCiol\\ChallengeWebApiJanuary\\ChallengeWebApiJanuary.csproj",
+        "projectPath": "C:\\Users\\LuanPedroMirandaCiol\\ChallengeWebSln\\ChallengeWebApiJanuary\\ChallengeWebApiJanuary.csproj",
         "packagesPath": "C:\\Users\\LuanPedroMirandaCiol\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LuanPedroMirandaCiol\\ChallengeWebApiJanuary\\obj\\",
+        "outputPath": "C:\\Users\\LuanPedroMirandaCiol\\ChallengeWebSln\\ChallengeWebApiJanuary\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\LuanPedroMirandaCiol\\AppData\\Roaming\\NuGet\\NuGet.Config",
